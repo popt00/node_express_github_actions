@@ -20,6 +20,11 @@ app.post('/profile', (req, res) => {
   res.json(req.body)
 })
 
+app.get('/name', function (req, res) {
+    res.send("<h1>C0864335- Parimal Donga</h1>")
+})
+
+
 //http://localhost:3000/admin
 app.get('/admin', (req, res) => {
   res.send('Admin Homepage')
