@@ -18,9 +18,9 @@ app.get('/', function (req, res) {
 //http://localhost:3000/profile
 app.get('/profile', (req, res) => {
   const data = {
-        name: "Anish Yadav",
-        id: "c0870495", 
-        email: "anishyadav60650@gmail.com" 
+        name: "Parimal Donga",
+        id: "c0864335", 
+        email: "contat@parimal.ca" 
     };
   res.json(data);
 })
@@ -32,7 +32,7 @@ app.get('/admin', (req, res) => {
 
 //http://localhost:3000/name
 app.get('/name', (req, res) => {
-   res.send('<h1>Anish Yadav</h1>')
+   res.send('<h1>Parimal</h1>')
 })
 
 //http://localhost:3000/user/100
