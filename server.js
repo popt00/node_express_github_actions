@@ -7,27 +7,32 @@ const SERVER_HOST = "localhost"
 
 app.use(express.json()) // for parsing application/json
 app.use(express.urlencoded({ extended: true })) // for parsing application/x-www-form-urlencoded
+app.use(express.static(__dirname));
 
 
 //http://localhost:3000/
 app.get('/', function (req, res) {
-    res.send("<h1>Home Page</h1>")
+    res.redirect('index.html')
 })
 
 //http://localhost:3000/profile
-app.post('/profile', (req, res) => {
-  console.log(req.body)
-  res.json(req.body)
+app.get('/profile', (req, res) => {
+  const data = {
+        name: "Anish Yadav",
+        id: "c0870495", 
+        email: "anishyadav60650@gmail.com" 
+    };
+  res.json(data);
 })
-
-app.get('/name', function (req, res) {
-    res.send("<h1>C0864335- Parimal Donga</h1>")
-})
-
 
 //http://localhost:3000/admin
 app.get('/admin', (req, res) => {
   res.send('Admin Homepage')
+})
+
+//http://localhost:3000/name
+app.get('/name', (req, res) => {
+   res.send('<h1>Anish Yadav</h1>')
 })
 
 //http://localhost:3000/user/100
